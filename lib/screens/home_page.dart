@@ -49,22 +49,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          LocationManager().Idontwant();
-                        });
-                      },
-                      child: const Text("Nope"),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          LocationManager().Iwant();
-                        });
-                      },
-                      child: const Text("Yep"),
-                    ),
+
 
                     Text("Like: ${LocationManager().filters.length}",
                         style:
