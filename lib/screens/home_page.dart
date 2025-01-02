@@ -65,10 +65,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: const Text("Yep"),
                     ),
-                    Text(
-                        "Don't like: ${LocationManager().unwantedLocations.length}",
-                        style:
-                            const TextStyle(color: Colors.red, fontSize: 20)),
+
                     Text("Like: ${LocationManager().filters.length}",
                         style:
                             const TextStyle(color: Colors.green, fontSize: 20)),

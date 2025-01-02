@@ -42,3 +42,6 @@ final GoRouter _router = GoRouter(
     ),
   ],
 );
+
+// Retirer les boutons --> Remplacer par le système NFC : 1 like == NFC sinon on ne fait rien (puis il
+// y a un classement des lieux préférés
