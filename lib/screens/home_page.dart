@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _scanNFC,
         tooltip: 'Add plan',
         child: const Icon(Icons.add),
       ),
