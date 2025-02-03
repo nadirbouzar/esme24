@@ -91,4 +91,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-flutter_nfc_kit: ^3.2.0 //Package NFC kit
+  flutter:    //Package nfc
+    sdk: flutter
+  flutter_nfc_kit: ^3.2.0
