@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:swipezone/screens/home_page.dart';
 import 'package:swipezone/screens/planning_page.dart';
 import 'package:swipezone/screens/select_page.dart';
+import 'package:flutter_nfc_kit/flutter_nfc_kit.dart';
 
 void main() {
   runApp(

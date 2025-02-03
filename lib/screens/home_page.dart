@@ -5,6 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:swipezone/domains/location_manager.dart';
 import 'package:swipezone/domains/locations_usecase.dart';
 import 'package:swipezone/screens/widgets/location_card.dart';
+import 'package:flutter_nfc_kit/flutter_nfc_kit.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -24,6 +25,17 @@ class _HomePageState extends State<HomePage> {
   void createDatabase() async {
 
   }
+  int likeCount = 0;
+  Future<void> _scanNFC() async {
+    try {
+      await FlutterNfcKit.poll();
+      setState(() {
+        likeCount++;
+      });
+    } catch (e) {
+      print("Erreur NFC : $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +47,7 @@ class _HomePageState extends State<HomePage> {
       body: FutureBuilder(
         future: LocationUseCase().getLocation(),
         builder: (context, snapshot) {
+
           if (snapshot.connectionState == ConnectionState.done) {
             var data = snapshot.data;
             if (data == null || data.isEmpty) {
@@ -51,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
 
 
-                    Text("Like: ${LocationManager().filters.length}",
+                    Text("Like: $likeCount",
                         style:
                             const TextStyle(color: Colors.green, fontSize: 20)),
                   ],
